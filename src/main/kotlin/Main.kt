@@ -17,9 +17,10 @@ fun App() {
 
     var text by remember { mutableStateOf("Salem, Alem!") }
 
+    val integrator = JiraIntegrator()
     MaterialTheme {
         Button(onClick = {
-            text = "Hello, Aslan!"
+            integrator.createRequest()
         }) {
             Text(text)
         }

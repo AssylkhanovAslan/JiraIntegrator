@@ -16,8 +16,13 @@ repositories {
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
+val ktor_version: String by project
+
 dependencies {
     implementation(compose.desktop.currentOs)
+
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-cio:$ktor_version")
 }
 
 tasks.withType<KotlinCompile> {
